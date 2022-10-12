@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <!-- link bootstrap styleseet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- google-icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    
+
+ 
+
+ <!-- Main-Part -->
+ <section class="main-section container">
+    <div class="row ">
+        <hr>
+        <div class="col-md-12 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0"><i class="fa fa-graduation-cap" aria-hidden="true"></i></i>Student Admission</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                
+      
+               <!-- academic details-->
+				<div class="headers-line"><i class="fa fa-university" aria-hidden="true"></i>
+					</i> Academic Detail</div>
+				
+								<div class="row">
+					<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Academic Year <span class="required">*</span></label>
+							<select name="year_id" class='form-control' id='academic_year_id'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="">Select</option>
+<option value="1">2019-2020</option>
+<option value="3">2020-2021</option>
+<option value="4" selected="selected">2021-2022</option>
+<option value="5">2022-2023</option>
+<option value="6">2023-2024</option>
+<option value="7">2024-2025</option>
+<option value="9">2025-2026</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+					
+					<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Register No <span class="required">*</span></label>
+							<input type="text" class="form-control" name="register_no" value="XS-00002" />
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Roll</label>
+							<input type="text" class="form-control" name="roll" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Admission Date <span class="required">*</span></label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="admission_date" value="2022-10-04" data-plugin-datepicker
+								data-plugin-options='{ "todayHighlight" : true }' />
+							</div>
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+								<div class="row mb-md">
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Class <span class="required">*</span></label>
+							<select name="class_id" class='form-control' id='class_id' onchange='getSectionByClass(this.value,0)'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select</option>
+<option value="2">Nine</option>
+<option value="3">Nine</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+					<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Section <span class="required">*</span></label>
+							<select name="section_id" class='form-control' id='section_id' 
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select Class First</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Category <span class="required">*</span></label>
+							<select name="category_id" class='form-control'
+								data-plugin-selectTwo data-width='100%' id='category_id' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select</option>
+<option value="2">Science</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<!-- student details -->
+				<div class="headers-line mt-md">
+					<i class="fa fa-user" aria-hidden="true"></i> Student Details				</div>
+								<div class="row">
+					<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label"> First Name <span class="required">*</span></label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="first_name" value=""/>
+							</div>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label"> Last Name <span class="required">*</span></label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="last_name" value="" />
+								<span class="error"></span>
+							</div>
+						</div>
+						<span class="error"></span>
+					</div>
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label"> Gender</label>
+							<select name="gender" class='form-control' data-plugin-selectTwo
+								data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+						</div>
+					</div>
+									</div>
+
+				<div class="row">
+										<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Blood group</label>
+							<select name="blood_group" class='form-control populate' data-plugin-selectTwo 
+								data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select</option>
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option>
+<option value="AB+">AB+</option>
+<option value="AB-">AB-</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Date Of Birth</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+								<input type="text" autocomplete="off" class="form-control" name="birthday" value="" data-plugin-datepicker
+								data-plugin-options='{ "startView": 2 }' />
+							</div>
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<div class="row">
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Mother Tongue</label>
+							<input type="text" class="form-control" name="mother_tongue" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Religion</label>
+							<input type="text" class="form-control" name="religion" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-4 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Caste</label>
+							<input type="text" class="form-control" name="caste" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<div class="row">
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Mobile No</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="mobileno" value="" />
+							</div>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Email</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+								<input type="text" class="form-control" name="email" id="email" value="" />
+							</div>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">City</label>
+							<input type="text" class="form-control" name="city" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-3 mb-sm">
+						<div class="form-group">
+							<label class="control-label">State</label>
+							<input type="text" class="form-control" name="state" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<div class="row">
+										<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Present Address</label>
+							<textarea name="current_address" rows="2" class="form-control" aria-required="true"></textarea>
+							<span class="error"></span>
+						</div>
+					</div>
+										<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Permanent Address</label>
+							<textarea name="permanent_address" rows="2" class="form-control" aria-required="true"></textarea>
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<!--custom fields details-->
+				<div class="row" id="customFields">
+									</div>
+
+				<div class="row">
+										<div class="col-md-12 mb-sm">
+						<div class="form-group">
+							<label for="input-file-now">Profile Picture</label>
+							<input type="file" name="user_photo" class="dropify" data-default-file="" />
+							<span class="error"></span>
+						</div>
+					</div>
+									</div>
+
+				<div class="" id="stuLogin">
+					<!-- login details -->
+					<div class="headers-line mt-md">
+						<i class="fa fa-user-plus" aria-hidden="true"></i> Login Details					</div>
+					<div class="row mb-md">
+						<div class="col-md-6 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Username <span class="required">*</span></label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username" value="" />
+								</div>
+								<span class="error"></span>
+							</div>
+						</div>
+						<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Password <span class="required">*</span></label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" value="" />
+								</div>
+								<span class="error"></span>
+							</div>
+						</div>
+						<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Retype Password <span class="required">*</span></label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="retype_password" value="" />
+								</div>
+								<span class="error"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+								<!--guardian details-->
+				<div class="headers-line  mt-md">
+					<i class="fa fa-user-secret" aria-hidden="true"></i> Guardian Details				</div>
+				
+				<div class="mb-sm checkbox-replace">
+					<label class="i-checks">
+						<input type="checkbox" name="guardian_chk" id="chkGuardian" value="true" ><i></i> 
+						Guardian Already Exist					</label>
+				</div>
+
+				<div class="row" id="exist_list" style="display: none;">
+					<div class="col-md-12 mb-md">
+						<label class="control-label">Guardian <span class="required">*</span></label>
+						<div class="form-group">
+							<select name="parent_id" class='form-control' id='parent_id'
+								data-plugin-selectTwo data-width='100%' >
+<option value="" selected="selected">Select</option>
+<option value="1">kibria</option>
+</select>
+							<span class="error"></span>
+						</div>
+					</div>
+				</div>
+
+								<div id="guardian_form" >
+					<div class="row">
+												<div class="col-md-6 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Name <span class="required">*</span></label>
+								<input class="form-control" name="grd_name" type="text" value="">
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-6 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Relation <span class="required">*</span></label>
+								<input type="text" class="form-control" name="grd_relation" value="" />
+								<span class="error"></span>
+							</div>
+						</div>
+											</div>
+					<div class="row">
+												<div class="col-md-6 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Father Name</label>
+								<input type="text" class="form-control" name="father_name" value="" />
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-6 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Mother Name</label>
+								<input type="text" class="form-control" name="mother_name" value="" />
+								<span class="error"></span>
+							</div>
+						</div>
+											</div>
+
+					<div class="row">
+												<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Occupation <span class="required">*</span></label>
+								<input class="form-control" name="grd_occupation" value="" type="text">
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Income <span class="required">*</span></label>
+								<input class="form-control" name="grd_income" value="" type="text">
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Education <span class="required">*</span></label>
+								<input class="form-control" name="grd_education" value="" type="text">
+								<span class="error"></span>
+							</div>
+						</div>
+											</div>
+
+					<div class="row">
+												<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">City</label>
+								<input class="form-control" name="grd_city" value="" type="text">
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">State</label>
+								<input class="form-control" name="grd_state" value="" type="text">
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Mobile No <span class="required">*</span></label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+									<input class="form-control" name="grd_mobileno" type="text" value="">
+								</div>
+								<span class="error"></span>
+							</div>
+						</div>
+												<div class="col-md-3 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Email <span class="required">*</span></label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+									<input type="email" class="form-control" name="grd_email" id="grd_email" value="" />
+								</div>
+								<span class="error"></span>
+							</div>
+						</div>
+											</div>
+
+										<div class="row">
+						<div class="col-md-12 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Address <span class="required">*</span></label>
+								<textarea name="grd_address" rows="2" class="form-control" aria-required="true"></textarea>
+								<span class="error"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+												<div class="col-md-12 mb-sm">
+							<div class="form-group">
+								<label for="input-file-now">Guardian Picture</label>
+								<input type="file" name="guardian_photo" class="dropify" data-default-file="" />
+								<span class="error"></span>
+							</div>
+						</div>
+											</div>
+
+					<div class="" id="grdLogin">
+						<div class="row mb-lg">
+							<div class="col-md-6 mb-sm">
+								<div class="form-group">
+									<label class="control-label">Usename <span class="required">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+										<input type="text" class="form-control" name="grd_username" id="grd_username" value="" />
+									</div>
+									<span class="error"></span>
+								</div>
+							</div>
+							<div class="col-md-3 mb-sm">
+								<div class="form-group">
+									<label class="control-label">Password <span class="required">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-unlock" aria-hidden="true"></i></i></span>
+										<input type="password" class="form-control" name="grd_password" value="" />
+									</div>
+									<span class="error"></span>
+								</div>
+							</div>
+							<div class="col-md-3 mb-sm">
+								<div class="form-group">
+									<label class="control-label">Retype Password <span class="required">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+										<input type="password" class="form-control" name="grd_retype_password" value="" />
+									</div>
+									<span class="error"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                			<!-- transport details -->
+				<div class="headers-line  mt-md">
+					<i class="fa fa-bus" aria-hidden="true"></i> Transport Details				</div>
+
+				<div class="row mb-md">
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Transport Route</label>
+							<select name="route_id" class='form-control' id='route_id'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select</option>
+<option value="1">abc</option>
+</select>
+						</div>
+					</div>
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Vehicle No</label>
+							<select name="vehicle_id" class='form-control' id='vehicle_id'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">First Select The Route</option>
+</select>
+						</div>
+					</div>
+				</div>
+				
+				<!-- hostel details -->
+				<div class="headers-line">
+					<i class="fa fa-hospital-o" aria-hidden="true"></i> Hostel Details				</div>
+				
+				<div class="row mb-md">
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Hostel Name</label>
+							<select name="hostel_id" class='form-control' id='hostel_id'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">Select</option>
+</select>
+						</div>
+					</div>
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Room Name</label>
+							<select name="room_id" class='form-control' id='room_id'
+								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity' >
+<option value="" selected="selected">First Select The Hostel</option>
+</select>
+						</div>
+					</div>
+				</div>
+				<!-- previous school details -->
+								<!-- previous school details -->
+				<div class="headers-line">
+					<i class="fas fa-bezier-curve"></i> Previous School Details				</div>
+				<div class="row">
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">School Name</label>
+							<input type="text" class="form-control" name="school_name" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+					<div class="col-md-6 mb-sm">
+						<div class="form-group">
+							<label class="control-label">Qualification</label>
+							<input type="text" class="form-control" name="qualification" value="" />
+							<span class="error"></span>
+						</div>
+					</div>
+				</div>
+				<div class="row mb-lg">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label">Remarks</label>
+							<textarea name="previous_remarks" rows="2" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+							</div>
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-md-offset-10 col-md-2">
+						<button type="submit" data-loading-text=" Processing" class="btn btn btn-default btn-block">
+							<i class="fa fa-plus" aria-hidden="true"></i> Save						</button>
+					</div>
+				</div>
+			</footer>
+			</form>	
+								
+ </section>
+      <!-- Scripting Part -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+</html>
